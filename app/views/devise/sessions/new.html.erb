@@ -1,0 +1,109 @@
+<div id="page-content" style="margin-top: 150px">
+        <!-- Breadcrumb -->
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Sign In</li>
+            </ol>
+        </div>
+        <!-- end Breadcrumb -->
+
+        <div class="container">
+            <header><h1>How to List Your Property</h1></header>
+            <div class="row">
+<aside class="col-md-3 col-sm-3">
+                    <div class="submit-step">
+                        <figure class="step-number">1</figure>
+                        <div class="description">
+                            <h4>Register your account</h4>
+                            <p style="padding-bottom: 5px">
+                            </p> 
+                        </div>
+                    </div><!-- /.submit-step -->
+<div class="submit-step">
+                        <figure class="step-number">2</figure>
+                        <div class="description">
+                            <h4>Sign in into your account</h4>
+                           <p style="padding-bottom: 5px">
+                            </p> 
+                        </div>
+                    </div><!-- /.submit-step -->
+
+<div class="submit-step">
+                        <figure class="step-number">3</figure>
+                        <div class="description">
+                            <h4>Choose your package</h4>
+                           <p style="padding-bottom: 5px">
+                            </p> 
+                        </div>
+                    </div><!-- /.submit-step -->
+
+
+<div class="submit-step">
+                        <figure class="step-number">4</figure>
+                        <div class="description">
+                            <h4>Use your self upload Features</h4>
+                            <p style="padding-bottom: 5px">
+                            </p> 
+                        </div>
+                    </div><!-- /.submit-step -->
+
+<div class="submit-step">
+                        <figure class="step-number">5</figure>
+                        <div class="description">
+                            <h4>Our in-house quality team will review your property details</h4>
+                            <p style="padding-bottom: 5px">
+                            </p> 
+                        </div>
+                    </div><!-- /.submit-step -->
+<div class="submit-step">
+                        <figure class="step-number">6</figure>
+                        <div class="description">
+                            <h4>Your Property goes live</h4>
+                            <p style="padding-bottom: 5px">
+                            </p> 
+                        </div>
+                    </div><!-- /.submit-step -->
+
+
+
+                </aside><!-- /.col-md-3 -->
+
+
+                <div class="col-md-4 col-sm-6 col-md-offset-2 col-sm-offset-1">
+   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+        </div>
+
+        <% if devise_mapping.rememberable? -%>
+          <div class="form-group">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+
+        <div class="form-group">
+          <%= f.submit "Log in", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+
+      <div class="auth-links">
+        <%= render "devise/shared/links" %>
+      </div>
+   
+ </div>
+
+  <aside id="our-guides">
+    
+                      <%= image_tag "place.gif", alt: "profile image" %>
+                        </aside> 
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>

@@ -1,0 +1,75 @@
+
+    <div class="navigation">
+        <div class="secondary-navigation">
+            <div class="container">
+                <div class="contact">
+                    
+                </div>
+                <div class="user-area">
+                    <div class="actions">
+                        <%= link_to "Log out", destroy_user_session_path, method: "delete" %>
+                        <a href="/register" class="promoted"><strong>Register</strong></a>
+                        <a href="/login">Sign In</a>
+                    </div>
+                    <div class="language-bar">
+                        <a href="#" class="active"><img src="assets/img/flags/gb.png" alt=""></a>
+                        <a href="#"><img src="assets/img/flags/de.png" alt=""></a>
+                        <a href="#"><img src="assets/img/flags/es.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <header class="navbar" id="top" role="banner">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-brand nav" id="brand">
+                        <a href="">  <%= image_tag "logo.jpg", :class => "styles" %></a>
+                       
+                      
+
+                    </div>
+                     <div class="navbar-brand nav" id="brand">
+                        <div style="font-size: 1.7em;color:#073855;padding-top:53px">LagosHomefinder</div>   
+                    
+                    </div>
+                    
+                </div>
+              
+                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                    
+                    <ul class="nav navbar-nav">
+                        
+                        <li data-no-turbolink><a href="/" data-turbolinks-action="replace">Home</a>
+                        
+                       
+                        <li class="has-child"><a href="#">Properties</a>
+                            <ul class="child-navigation">
+                                
+                                <li><a href="/rent">For Rent</a></li>
+                                <li><a href="/buy">For Sale</a></li>
+                                 
+                            </ul>
+                        </li>
+                       
+                        <li class="has-child"><a >Agents & Agencies</a>
+                            <ul class="child-navigation">
+                                <li><a href="/agent">Find an Agent</a></li>
+                                 <li><a href="/agency">Find an Agency</a></li>
+                                
+                            </ul>
+                        </li>
+                       <li><a href="/login">List Your Property</a></li> 
+                        
+                    </ul>
+                </nav><!-- /.navbar collapse-->
+               <!-- <div class="add-your-property">
+                    <a href="submit.html" class="btn btn-default"><i class="fa fa-plus"></i><span class="text">Add Your Property</span></a>
+                </div>  -->
+            </header><!-- /.navbar -->        </div><!-- /.container -->
+    </div><!-- /.navigation -->

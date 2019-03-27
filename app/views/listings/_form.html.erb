@@ -1,0 +1,185 @@
+<%= form_with(model: listing, :html => { :multipart => true },local: true) do |form| %>
+  <div class="row">
+  <div class="block">
+  <div class="col-md-9 col-sm-9">
+  <section id="submit-form">
+  <section id="basic-information">
+  <header><h2>Basic Information</h2></header>
+  <div class="row">
+  <div class="col-md-8">
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class:'form-control' %>
+  </div>
+ </div>
+
+   <div class="col-md-4">
+   <div class="form-group">
+   <div class="input-group">
+   <span class="input-group-addon">₦</span> 
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+   </div>
+   </div>
+   </div>
+
+   </div>
+  <div class="form-group">
+ 
+    <%= form.label :description %>
+     <%= form.text_area :description, class: 'form-control' %>
+  </div>
+
+ <section>
+ <div class="row">
+ <div class="block clearfix">
+ <div class="col-md-9 col-sm-9">
+<section id="summary">
+<header><h2>Summary</h2></header>
+  <div class="form-group">
+    <%= form.label :location %>
+  
+   <%= form.select(:location, options_for_select([['Mainland-Lagos','Mainland-Lagos'],['Island-Lagos','Island-Lagos']])) %>
+                                
+                                   
+  </div>
+
+    <div class="row">
+    <div class="col-md-6 col-sm-6">
+    <div class="form-group">
+    <%= form.label :type %>
+    <%= form.select(:type, options_for_select([['Luxurious Property','Luxurious Property'],['Duplex','Duplex']])) %>
+    
+  </div>
+ </div> 
+  <div class="col-md-6 col-sm-6">
+  <div class="form-group">
+    <%= form.label :status %>
+    <%= form.select(:status, options_for_select([['Sale','Sale'],['Rent','Rent']])) %>
+  </div>
+  </div>
+  </div>
+   <div class="row">
+   <div class="col-md-6 col-sm-6">
+   <div class="form-group">
+    <%= form.label :bed %>
+    <%= form.number_field :bed %>
+  </div>
+  </div>
+   <div class="col-md-6 col-sm-6">
+   <div class="form-group">
+    <%= form.label :bath %>
+    <%= form.number_field :bath %>
+  </div>
+  </div>
+ </div>
+ <div class="row">
+ <div class="col-md-6 col-sm-6">
+ <div class="form-group">
+ <div class="input-group">
+ <%= form.label :area %>
+ <%= form.number_field :area %>
+ <span class="input-group-addon">m<sup>2</sup></span>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-sm-6">
+<div class="form-group">  
+  <%= form.label :garage %>
+  <%= form.number_field :garage %>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+  <%= form.label :address %>
+  <%= form.text_field :address %>
+</div>
+
+
+  <section class="block" id="gallery">
+  <header><h2>Gallery</h2></header>
+  <div class="centers">
+  <div class="form-group">
+                                     
+    <%= form.fields_for :post_attachments do |p| %>
+     <div class="form-group">
+       <%= p.label :img %><br>
+       <%= p.file_field :img, :multiple => true, name:"listing_images[img][]" %>
+       <%= p.file_field :img, :multiple => true, name:"listing_images[img][]" %>
+     </div> 
+
+       <%= form.submit "Submit", class: 'btn pull-right btn-default' %>
+                               <% end %>
+   <% end %>                                          
+ </div> 
+ </div>
+ </div>
+</section>
+
+                               <!-- <section id="property-features" class="block">
+                                    <section>
+                                        <header><h2>Property Features</h2></header>
+                                        <ul class="submit-features">
+                                            <li><div class="checkbox"><label><input type="checkbox">Air conditioning</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Bedding</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Heating</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Internet</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Microwave</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Smoking allowed</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Use of pool</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Toaster</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Coffee pot</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Cable TV</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Parquet</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Roof terrace</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Terrace</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Balcony</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Iron</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Hi-Fi</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Beach</label></div></li>
+                                            <li><div class="checkbox"><label><input type="checkbox">Garage</label></div></li>
+                                        </ul>
+                                    </section>
+                                </section>  -->
+                                <hr>
+                            </section>
+                        </div><!-- /.col-md-9 -->
+                        <div class="col-md-3 col-sm-3">
+                            <aside class="submit-step">
+                                <figure class="step-number">2</figure>
+                                <div class="description">
+                                    <h4>Enter Information About Property</h4>
+                                    <p>Type information about your property. Be descriptive.
+                                    </p>
+                                </div>
+                            </aside><!-- /.submit-step -->
+                        </div><!-- /.col-md-3 -->
+                    </div>
+                </div><!-- /.row -->
+                <div class="row">
+                    <div class="block">
+                        <div class="col-md-9 col-sm-9">
+                            <div class="center">
+                                <div class="form-group">
+                                  
+                            
+                                </div><!-- /.form-group -->
+                                <figure class="note block">By clicking the “Proceed to Payment” or “Submit” button you agree with our <a href="terms-conditions.html">Terms and conditions</a></figure>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3">
+                            <aside class="submit-step">
+                                <figure class="step-number">3</figure>
+                                <div class="description">
+                                    <h4>Review Information and Proceed to Payment</h4>
+                                    <p>Carefully check entered information and than click button to submit them.
+                                    </p>
+                                </div>
+                            </aside><!-- /.submit-step -->
+                        </div><!-- /.col-md-3 -->
+                    </div>
+                </div>
+            </form><!-- /#form-submit -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->

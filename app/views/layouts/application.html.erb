@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lagoshommefinder Number </title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" %>
+
+      <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
+
+    <%= javascript_include_tag 'application' %>
+  
+  </head>
+
+  <body class="page-homepage navigation-fixed-top page-slider page-slider-search-box" id="page-top" data-spy="scroll" data-target=".navigation" data-offset="90">
+    <div class="wrapper">
+
+   
+ <%= render 'shared/blog_nav' %>
+   
+    <%= yield %>
+
+    <%= render 'shared/portfolio_footer' %>
+<script>
+    
+
+  
+    $(window).load(function(){
+        initializeOwl(false);
+    });
+</script>
+  </body>
+
+</html>

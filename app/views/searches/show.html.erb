@@ -1,0 +1,388 @@
+
+<div id="page-content" style="margin-top: 150px">
+        <!-- Breadcrumb -->
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li class="active">Property Listing</li>
+            </ol>
+        </div>
+        <!-- end Breadcrumb -->
+
+        <div class="container">
+            <div class="row">
+                <!-- Results -->
+                <div class="col-md-9 col-sm-9">
+                    <section id="results">
+                        <header><h1>Properties Listing</h1></header>
+                      <!--  <section id="search-filter">
+                            <figure><h3><i class="fa fa-search"></i>Search Results:</h3>
+                              <span class="search-count">28</span> 
+                                <div class="sorting">
+                                    <div class="form-group">
+                                        <select name="sorting">
+                                            <option value="">Sort By</option>
+                                            <option value="1">Lowest price first</option>
+                                            <option value="2">Highest price first</option>
+                                            <option value="3">Date added</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </figure>
+                        </section>  -->
+                        <section id="properties" class="display-lines">
+                               
+                                 <% if @search.search_listings.empty? %>
+                                  <p>No records Found </p>
+
+                                 <% else %>  
+                                <%  @search.search_listings.each do |search|          %>
+                                <p>
+                                <% image = search.listing_images.first %>
+                                    
+                                <div class="property">
+                                <figure class="type" title="Single Family"></figure>
+                                <figure class="tag status">For <%= search.status %></figure>
+                                <div class="property-image">
+                                    <a href="/listings/<%= search.id %>">
+                                       <%= image_tag image.img.url, :class => "style_image"%>
+                                    </a>
+                                </div>
+                                <div class="info">
+                                    <header>
+                                         <a href="/listings/<%= search.id %>"> <h3><%= search.title %></h3></a>
+                                        <!--<figure>Minneapolis, MN 55402 </figure>  -->
+                                    </header>
+                                    <div class="tag price">₦ <%= search.price  %></div>
+                                    <aside>
+                                        <p><%= search.description %>                                         </p>
+                                        <dl>
+                                            <dt>Status:</dt>
+                                            <dd>Sale</dd>
+                                           
+                                            <dt>Beds:</dt>
+                                            <dd><%= search.bed%></dd>
+                                            <dt>Baths:</dt>
+                                            <dd><%= search.bath %></dd>
+
+                                        </dl>
+                                    </aside>
+                                    <a href="#" class="link-arrow">Read More</a>
+                                </div>
+                            </div>
+                             <% end %>
+                             <% end %>
+
+                               
+
+                                                                                 
+
+                                                                                 
+
+                          
+                              <section id="advertising">
+                                <a href="sign.php">
+                                    <div class="banner">
+                                        <div class="wrapper">
+                                            <span class="title">Do you want your property to be listed here?</span>
+                                            <span class="submit">Submit it now! <i class="fa fa-plus-square"></i></span>
+                                        </div>
+                                    </div><!-- /.banner-->
+                                </a>
+                            </section><!-- /#adveritsing-->
+                                                                                    
+
+                                                                                  
+
+
+                                                                                 
+
+                          <div class='center'><ul class='pagination'><li><a href='buy.php?page=1'>1</a></li><li><a href='buy.php?page=2'>2</a></li><li><a href='buy.php?page=3'>3</a></li></ul></div>                          
+ 
+                          <!-- <div class="center">
+                                <ul class="pagination">
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                </ul>
+                            </div>-->
+                        </section><!-- /#properties-->
+                    </section><!-- /#results -->
+                </div><!-- /.col-md-9 -->
+                <!-- end Results -->
+
+                <!-- sidebar -->
+<aside id="our-guides">
+                              <img src="place.gif" >
+                        </aside>
+
+
+                <div class="col-md-3 col-sm-3">
+                    <section id="sidebar">
+                        <aside id="edit-search">
+                            <header><h3>Search Properties</h3></header>
+                            <form role="form" id="form-sidebar" class="form-search" action="properties-listing.html">
+                                <div class="form-group">
+                                    <select name="type">
+                                        <option value="">Status</option>
+                                        <option value="1">To Rent</option>
+                                        <option value="2">To Sale</option>
+                                         
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <select name="city">
+                                        <option value="">Covered Areas</option>
+                                        <option value="Apapa">Apapa</option>
+                                        <option value="Oregun">Oregun</option>
+                                        <option value="Agidingbi">Agidingbi</option>
+                                        <option value="Allen avenue">Allen avenue</option>
+                                        <option value="Opebi">Opebi</option>
+                                        
+                                        
+                                        <option value="Ikeja GRA">Ikeja GRA</option>
+                                        <option value="Anifowoshe">Anifowoshe</option>
+                                        <option value="Awolowo Ikeja">Awolowo Ikeja</option>
+                                        <option value="Wemabod estate">Wemabod estate</option>
+                                        <option value="Toyin Street">Toyin Street</option>
+                                        
+                 <option value="Adeniyi jones">Adeniyi jones</option>
+                                        <option value="Marwa garden">
+                                            Marwa garden</option>
+                                        <option value="Ogba">Ogba</option>
+                                        <option value="Omole phase 1">Omole phase 1</option>
+                                        <option value="Toyin Street">Toyin Street</option>
+                                        
+                                        <option value="Awolowo Ikeja">Awolowo Ikeja</option>
+                                        <option value="Wemabod estate">Wemabod estate</option>
+                                        <option value="Magodo">Magodo</option>
+                                        
+                 <option value="Omole phase 2">Omole phase 2</option>
+                                        <option value="Shangisha">
+                                            Shangisha</option>
+                                        <option value="Ojodu">Ojodu</option>
+                                        <option value="Berger">Berger</option>
+                                        <option value="Ikosi
+">Ikosi
+</option>
+
+
+
+  
+                                        <option value="Alapere">Alapere</option>
+                                        <option value="Ojota">Ojota</option>
+                                        <option value="Ogudu">Ogudu</option>
+                                        
+                                       
+
+
+
+
+
+
+
+
+
+                                        
+                 <option value=" Gbagada"> Gbagada</option>
+                                        <option value="Anthony">
+                                            Anthony</option>
+                                        <option value="Mende">Mende</option>
+                                        <option value="Maryland">Maryland</option>
+                                        <option value="Shonibare
+">Shonibare
+</option>
+
+<option value="G.Kappa
+">G.Kappa
+</option>
+
+
+<option value="Mobolaji Bank Anthony"> Mobolaji Bank Anthony</option>
+                                        <option value="Ilupeju">
+                                            Ilupeju</option>
+                                        <option value="Obanikoro">Obanikoro</option>
+                                        <option value="Maryland">Maryland</option>
+                                        Fadeyi
+
+
+
+                                        
+                                        
+                                        <option value="Yaba
+">Yaba
+</option>
+
+<option value="Surulere axis
+">Surulere axis
+</option>
+<option value="Alagomeji
+">Alagomeji
+</option>
+
+
+<option value="Festac Town">Festac Town</option>
+                                        <option value="Lagos Island">Lagos Island</option>
+                                        
+                 <option value="Ikoyi(old and new)">Ikoyi(old and new)</option>
+                                        <option value="Park view">
+                                            Park view</option>
+                                        <option value="Punch Estate">Punch Estate</option>
+                                        <option value="Victoria island">Victoria island</option>
+                                        <option value="Banana island
+">Banana island
+</option>
+
+
+
+  
+                                        <option value="Dolphin estate">Dolphin estate</option>
+                                        <option value="Lekki phase 1">Lekki phase 1</option>
+                                        <option value="Oniru estate">Oniru estate</option>
+                                        
+                                       
+
+
+                                        
+                 <option value="Chevron estate"> Chevron estate</option>
+                                        <option value="Abraham Adesanya">
+
+
+
+
+
+
+
+                                            Abraham Adesanya</option>
+                                        <option value="Ajah axis">Ajah axis</option>
+                                        <option value="Iyana ipaja">Iyana ipaja</option>
+                                        <option value="Santos Estate
+">
+                                            Santos Estate
+</option>
+
+
+<option value="Akowonjo
+"> Akowonjo</option>
+                                        <option value="Gowon">
+                                            Gowon
+                                            </option>
+                                        <option value="Abesan Estate">Abesan Estate</option>
+                                        <option value="Jemade Estate">Jemade Estate</option>
+                                        <option value="Shagari Estate
+">Shagari Estate
+</option>
+
+<option value="Federal low cost estate( abesan)
+">Federal low cost estate( abesan)
+</option>
+
+<option value="Isolos
+">Isolo
+</option>
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="district">
+                                        <option value="">District</option>
+                                        <option value="1">Mainland-Lagos</option>
+                                        <option value="2">Island-Lagos</option>
+                                        <option value="2">others</option>
+                                        
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <select name="property-type">
+                                        <option value="">Property Type</option>
+                                        <option value="1">Luxurious Property</option>
+                                        <option value="2">Duplex</option>
+                                        <option value="3">Flat/Apartment</option>
+                                        <option value="4">Office Space</option>
+                                        <option value="5">Land</option>
+                                        <option value="5">Shortlet</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <div class="price-range">
+                                        <input id="price-input" type="text" name="price" value="100000;500000000">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-default">Search Now</button>
+                                </div>
+                            </form><!-- /#form-map -->
+                        </aside><!-- /#edit-search -->
+                        <aside id="featured-properties">
+                            <header><h3>Featured Properties</h3></header>
+                                                              
+                                <div class="property small">
+                                <a href="detail.php?id=1&&owner=17">
+                                    <div class="property-image">
+                                        <img alt="" src="img/cache_2479454397.jpg">
+                                    </div>
+                                </a>
+                                <div class="info">
+                                    <a href="detail.php?id=1&&owner=17"><h4>2 Bedroom Flat</h4></a>
+                                  <!--  <figure>Doral, FL 33178 </figure>  -->
+                                    <div class="tag price">₦22,500,000.00</div>
+                                </div>
+                            </div><!-- /.property -->
+
+                                                         
+                                <div class="property small">
+                                <a href="detail.php?id=2&&owner=17">
+                                    <div class="property-image">
+                                        <img alt="" src="img/cache_2479454677.jpg">
+                                    </div>
+                                </a>
+                                <div class="info">
+                                    <a href="detail.php?id=2&&owner=17"><h4>5 BEDROOM MANSION</h4></a>
+                                  <!--  <figure>Doral, FL 33178 </figure>  -->
+                                    <div class="tag price">₦70,000,000.00</div>
+                                </div>
+                            </div><!-- /.property -->
+
+                                                         
+                                <div class="property small">
+                                <a href="detail.php?id=3&&owner=17">
+                                    <div class="property-image">
+                                        <img alt="" src="img/cache_24794546761.jpg">
+                                    </div>
+                                </a>
+                                <div class="info">
+                                    <a href="detail.php?id=3&&owner=17"><h4>FURNISHED 5 BEDROOM</h4></a>
+                                  <!--  <figure>Doral, FL 33178 </figure>  -->
+                                    <div class="tag price">₦45,500,000.00</div>
+                                </div>
+                            </div><!-- /.property -->
+
+                                                         
+                                <div class="property small">
+                                <a href="detail.php?id=4&&owner=17">
+                                    <div class="property-image">
+                                        <img alt="" src="img/Detached duplex.jpg">
+                                    </div>
+                                </a>
+                                <div class="info">
+                                    <a href="detail.php?id=4&&owner=17"><h4>4 BEDROOM SEMI DETACHED DUPLEX</h4></a>
+                                  <!--  <figure>Doral, FL 33178 </figure>  -->
+                                    <div class="tag price">₦52,500,000.00</div>
+                                </div>
+                            </div><!-- /.property -->
+
+                             
+                            
+                        </aside><!-- /#featured-properties -->
+                        <aside id="our-guides">
+                             <img src="place.gif" >
+                        </aside> 
+                    </section><!-- /#sidebar -->
+                </div><!-- /.col-md-3 -->
+                <!-- end Sidebar -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>
