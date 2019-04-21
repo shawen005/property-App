@@ -1,8 +1,8 @@
-class CreateSearches < ActiveRecord::Migration[5.2]
+class CreateFilters < ActiveRecord::Migration[5.2]
   def change
-    create_table :searches do |t|
-      t.string :status
+    create_table :filters do |t|
       t.string :area
+      t.string :status
       t.integer :min_price
       t.integer :max_price
 

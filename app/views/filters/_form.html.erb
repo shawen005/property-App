@@ -1,0 +1,45 @@
+  <div class="search-box-wrapper">
+        <div class="search-box-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-9 col-sm-4 col-sm-offset-8">
+                        <div class="search-box map">
+                           
+                               
+
+<%=  form_for Filter.new, :html => {:class => 'form-map form-search', :id => 'form-map form-search'}  do |form| %>
+   <h2>Search Your Property</h2>
+  <div class="field">
+    <%= form.label :area %>
+   <%= form.select(:area, options_for_select([['Select Location',''],['Mainland-Lagos','Mainland-Lagos'],['Island-Lagos','Island-Lagos']])) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+     <%= form.select(:status, options_for_select([['Select status',''],['Sale','Sale'],['Rent','Rent']])) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Bedroom %>
+     <%= form.select(:bed, options_for_select([['Select Bedroom',''],['1','1'],['2','2'],['3','3'],['4','4'],['5','5']] )) %>
+  </div>
+
+
+  <div class="field" style="padding-bottom: 20px">
+    <%= form.label :Bathroom %>
+     <%= form.select(:bath, options_for_select([['Select Bathroom',''],['1','1'],['2','2'],['3','3'],['4','4'],['5','5']] )) %>
+  </div> 
+
+
+ 
+  <div class="actions" style="padding-bottom: 20px">
+    <%= form.submit 'Search Now',  :class => 'btn btn-default' %>
+  </div>
+<% end %>
+
+   </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  

@@ -74,6 +74,17 @@ class ListingsController < ApplicationController
     @featured = Listing.rand.latest
   end
 
+  def property
+    @personal =  current_user
+    
+    @records = @personal.listings.all if @personal
+
+    @personal ||= current_user
+
+
+
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_listing

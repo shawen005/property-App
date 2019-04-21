@@ -1,0 +1,35 @@
+ <aside id="edit-search">
+                            <header><h3>Search Properties</h3></header>
+
+
+<%=  form_for Filter.new, :html => {:class => 'form-search', :id => 'form-sidebar'}  do |form| %>
+   <h2>Search Your Property</h2>
+  <div class="form-group">
+    
+   <%= form.select(:area, options_for_select([['Select Location',''],['Mainland-Lagos','Mainland-Lagos'],['Island-Lagos','Island-Lagos']])) %>
+  </div>
+
+  <div class="form-group">
+  
+     <%= form.select(:status, options_for_select([['Select status',''],['Sale','Sale'],['Rent','Rent']])) %>
+  </div>
+
+  <div class="form-group">
+  
+     <%= form.select(:bed, options_for_select([['Select Bedroom',''],['1','1'],['2','2'],['3','3'],['4','4'],['5','5']] )) %>
+  </div>
+
+
+  <div class="form-group" >
+    
+     <%= form.select(:bath, options_for_select([['Select Bathroom',''],['1','1'],['2','2'],['3','3'],['4','4'],['5','5']] )) %>
+  </div> 
+
+
+ 
+  <div class="actions" style="padding-bottom: 20px">
+    <%= form.submit 'Search Now',  :class => 'btn btn-default' %>
+  </div>
+<% end %>
+                           
+                        </aside><!-- /#edit-search -->

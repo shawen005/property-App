@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_28_070143) do
+ActiveRecord::Schema.define(version: 2019_04_14_145606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 2019_01_28_070143) do
   create_table "dashboards", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "filters", force: :cascade do |t|
+    t.string "area"
+    t.string "status"
+    t.integer "min_price"
+    t.integer "max_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "bed"
+    t.integer "bath"
   end
 
   create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
@@ -146,6 +157,7 @@ ActiveRecord::Schema.define(version: 2019_01_28_070143) do
     t.string "phone"
     t.string "avatar"
     t.string "account"
+    t.string "description"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["slug"], name: "index_users_on_slug", unique: true

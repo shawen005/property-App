@@ -16,8 +16,7 @@
    <div class="col-md-4">
    <div class="form-group">
    <div class="input-group">
-   <span class="input-group-addon">₦</span> 
-    <%= form.label :price %>
+     <%= form.label :price %>
     <%= form.number_field :price %>
    </div>
    </div>
@@ -79,7 +78,7 @@
  <div class="input-group">
  <%= form.label :area %>
  <%= form.number_field :area %>
- <span class="input-group-addon">m<sup>2</sup></span>
+
 </div>
 </div>
 </div>
@@ -96,19 +95,20 @@
   <%= form.text_field :address %>
 </div>
 
-
   <section class="block" id="gallery">
   <header><h2>Gallery</h2></header>
   <div class="centers">
   <div class="form-group">
-                                     
+           <div  id="filediv">                             
     <%= form.fields_for :post_attachments do |p| %>
      <div class="form-group">
-       <%= p.label :img %><br>
-       <%= p.file_field :img, :multiple => true, name:"listing_images[img][]" %>
-       <%= p.file_field :img, :multiple => true, name:"listing_images[img][]" %>
+       <%= p.label :image %><br>
+       <%= p.file_field :img, :multiple => true, name:"listing_images[img][]",id: 'file' %>
+       <br>
+        <input type="button" id="add_more" class="btn btn-default small" value="Add More" />
+       
      </div> 
-
+      </div>
        <%= form.submit "Submit", class: 'btn pull-right btn-default' %>
                                <% end %>
    <% end %>                                          
