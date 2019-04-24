@@ -15,10 +15,10 @@
                     <header><h3>Account</h3></header>
                     <aside>
                         <ul class="sidebar-navigation">
-                            <li ><a href="profile.php"><i class="fa fa-user"></i><span>Profile</span></a></li>
-                            <li><a href="properties.php"><i class="fa fa-home"></i><span>My Properties</span></a></li>
-                            <li class="active"><a href="upload.php"><i class="fa fa-upload"></i><span>Upload Property</span></a></li>
-                            <li> <%= link_to "Log out", destroy_user_session_path, method: "delete" %> <i class="fa fa-key"></i></a></li>
+                            <li ><a href="/edit"><i class="fa fa-user"></i><span>Profile</span></a></li>
+                            <li><a href="/property" ><i class="fa fa-home"></i><span>My Properties</span></a></li>
+                            <li class="active"><a href="/listings"><i class="fa fa-upload"></i><span>Upload Property</span></a></li>
+                            <li> <a href="<%= destroy_user_session_path %>" data-method="delete" ><i class="fa fa-key"></i><span>Logout</span></a> </li>
                         </ul>
                     </aside>
                 </section><!-- /#sidebar -->

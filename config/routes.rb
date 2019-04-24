@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :dashboards
   resources :topics, only: [:index, :show]
   resources :comments
-  resources :searches
+  resources :filters
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   resources :portfolios, except: [:show] do
   put :sort, on: :collection
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get 'rent', to: 'listings#rent'
   get 'buy', to: 'listings#buy'
+  get 'property', to: 'listings#property'
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
   
   get 'agents/:id', to: 'users#show', as: 'user_show'

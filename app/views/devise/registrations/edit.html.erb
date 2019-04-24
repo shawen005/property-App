@@ -1,5 +1,151 @@
+  <div id="page-content" style="margin-top: 150px">
+        <!-- Breadcrumb -->
+        <div class="container">
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Account</a></li>
+                <li class="active">Profile</li>
+            </ol>
+        </div>
+        <!-- end Breadcrumb -->
 
-<div class="card">
+        <div class="container">
+            <div class="row">
+            <!-- sidebar -->
+            <div class="col-md-3 col-sm-2">
+                <section id="sidebar">
+                    <header><h3>Account</h3></header>
+                    <aside>
+                        <ul class="sidebar-navigation">
+                            <li class="active"><a href="/edit"><i class="fa fa-user"></i><span>Profile</span></a></li>
+                            <li><a href="/property" ><i class="fa fa-home"></i><span>My Properties</span></a></li>
+                            <li ><a href="/listings"><i class="fa fa-upload"></i><span>Upload Property</span></a></li>
+                            <li> <a href="<%= destroy_user_session_path %>" data-method="delete" ><i class="fa fa-key"></i><span>Logout</span></a> </li>
+                        </ul>
+                    </aside>
+                </section><!-- /#sidebar -->
+            </div><!-- /.col-md-3 -->
+            <!-- end Sidebar -->
+                <!-- My Properties -->
+                <div class="col-md-9 col-sm-10">
+                    <section id="profile">
+                        <header><h1>Kindly Complete your Profile <%= resource_name.to_s.humanize %> </h1></header>
+                        <div class="account-profile">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3">
+                                    <img alt="" class="image" src="">
+                                </div>
+                                <div class="col-md-9 col-sm-9">
+                                  
+                                     <!--   <div class="checkbox switch" id="agent-switch" data-agent-state="is-agent">
+                                            <label>
+                                                I am an agent<input type="checkbox">
+                                            </label>
+                                        </div>  
+                                        <section id="agency">
+                                            <h3>My Agency</h3>
+                                            <div class="row">
+                                                <div class="col-md-4 col-sm-4">
+                                                    <label for="account-agency">Select your agency:</label>
+                                                </div> 
+                                                <div class="col-md-8 col-sm-8">
+                                                    <div class="form-group">
+                                                        <select name="account-agency" id="account-agency">
+                                                            <option value="">Agency</option>
+                                                            <option value="1">Estate+</option>
+                                                            <option value="2">Northfolk Eastate</option>
+                                                            <option value="3">Maximum Properties</option>
+                                                            <option value="4">Edd's Homes</option>
+                                                            <option value="5">Will & Scotch</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                        </section> -->
+                                        <section id="contact">
+                                          
+                         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                       <%= devise_error_messages! %>
+                                            <dl class="contact-fields">
+                                                <dt> <%= f.label :FullName %></dt>
+                                                <dd><div class="form-group">
+
+                                                      <%= f.text_field :name, class: 'form-control' %>
+                                                    
+                                                </div><!-- /.form-group --></dd>
+                                                <dt><label for="form-account-phone">Phone:</label></dt>
+                                                <dd><div class="form-group">
+                                                   <%= f.text_field :phone, class: 'form-control' %>
+                                                </div><!-- /.form-group --></dd>
+                                                <dt><label for="form-account-email">Email:</label></dt>
+                                                <dd><div class="form-group">
+                                                     <%= f.text_field :email, class: 'form-control' %>
+                                                </div><!-- /.form-group --></dd>
+                                            </dl>
+                                        </section>
+                                        <section id="about-me">
+                                            <h3>About Me</h3>
+                                            <div class="form-group">
+                                                <%= f.text_area :description, class: 'form-control' %>
+</textarea>
+                                            </div><!-- /.form-group -->
+                                        </section>
+                                        <section id="social">
+                                            
+                                             <div class="form-group">
+              <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+              <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+            </div>
+
+                                            <div class="form-group clearfix">
+
+                                               <%= f.submit "Save Changes", class: 'btn pull-right btn-default' %>
+                                                
+                                            </div><!-- /.form-group -->
+                                        </section>
+
+                                          <% end %>
+                                   
+                                   <!-- <section id="change-password">
+                                        <header><h2>Change Your Password</h2></header>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-6">
+                                                <form role="form" id="form-account-password" method="post" >
+                                                    <div class="form-group">
+                                                        <label for="form-account-password-current">Current Password</label>
+                                                        <input type="password" class="form-control" id="form-account-password-current" name="form-account-password-current">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="form-account-password-new">New Password</label>
+                                                        <input type="password" class="form-control" id="form-account-password-new" name="form-account-password-new">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="form-account-password-confirm-new">Confirm New Password</label>
+                                                        <input type="password" class="form-control" id="form-account-password-confirm-new" name="form-account-password-confirm-new">
+                                                    </div>
+                                                    <div class="form-group clearfix">
+                                                        <button type="submit" class="btn btn-default" id="form-account-password-submit">Change Password</button>
+                                                    </div>                                                </form>
+                                            </div>
+                                          <div class="col-md-6 col-sm-6">
+                                                <strong>Hint:</strong>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et dui
+                                                    vestibulum, bibendum purus sit amet, vulputate mauris.
+                                                </p>
+                                            </div>  
+                                        </div>
+                                    </section> -->
+                                </div><!-- /.col-md-9 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.account-profile -->
+                    </section><!-- /#profile -->
+                </div><!-- /.col-md-9 -->
+                <!-- end My Properties -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div>
+    <!-- end Page Content -->
+<!--<div class="card">
   <div class="card-block">
     <div class="row">
       <div class="col-md-8">
@@ -58,4 +204,4 @@
       <%= link_to "Back", :back %>
     </div>
   </div>
-</div>
+</div>  -->
