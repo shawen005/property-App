@@ -42,7 +42,7 @@ class ListingsController < ApplicationController
        params[:listing_images]['img'].each do |a|
           @listing_image = @listing.listing_images.create!(:img => a,     :listing_id => @listing.id)
        end
-      redirect_to @listing, notice: 'Listing was successfully created.'
+      redirect_to '/property', notice: 'Listing was successfully created.'
     else
       render :new
     end
