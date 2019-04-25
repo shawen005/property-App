@@ -116,7 +116,7 @@
                                             <div class="col-md-7 col-sm-12">
                                                 <aside class="agent-info clearfix">
                                                     <% img = @listing.user.avatar %>     
-                                                    <figure><a href="agents.php?id=40">   <%= image_tag img.url unless img.url.nil? %></a></figure>
+                                                    <figure><a href="/agents/<%= @listing.user.id %>">   <%= image_tag img.url unless img.url.nil? %></a></figure>
 
                                                     <div class="agent-contact-info">
                                                         <h3><%= @listing.user.first_name %></h3>
@@ -133,7 +133,7 @@
                                                             <dd>john.doe</dd>
                                                         </dl>  -->
                                                         <hr>
-                                                        <a href="agents.php?id=40" class="link-arrow">Full Profile</a>
+                                                        <a href="/agents/<%= @listing.user.id %>" class="link-arrow">Full Profile</a>
                                                     </div>
                                                 </aside>
                                             </div>
@@ -182,7 +182,7 @@
                             <% @new.each do |list| %>
                
                             <div class="property small">
-                                <a href="detail.php?id=39&&owner=40">
+                                <a href="/listings/<%= list.id %>">
                                     <div class="property-image">
                                  
                                      <% image = list.listing_images.first %>

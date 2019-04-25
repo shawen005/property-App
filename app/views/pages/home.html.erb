@@ -97,7 +97,7 @@
                 <% @lists.each do |list| %>
                  <div class="col-md-3 col-sm-6">
                         <div class="property">
-                            <a href="detail.php?id=4&&owner=17">
+                            <a href="/listings/<%= list.id %>">
                                 <div class="property-image">
                                     <% image = list.listing_images.first %>
                                     <%= image_tag image.img.url, :class => "style_image"%>
