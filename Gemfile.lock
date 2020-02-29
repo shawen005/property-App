@@ -180,7 +180,7 @@ GEM
       activerecord (> 4.0.0)
     pg (1.1.4)
     public_suffix (3.0.3)
-    puma (3.12.0)
+    puma (3.12.3)
     rack (2.0.6)
     rack-proxy (0.6.5)
       rack
@@ -307,7 +307,7 @@ DEPENDENCIES
   owlcarousel-rails
   petergate (~> 1.8)
   pg (>= 0.18, < 2.0)
-  puma (~> 3.11)
+  puma (~> 3.12)
   rails (~> 5.2.0)
   redis (~> 3.3, >= 3.3.3)
   sass-rails (~> 5.0)
